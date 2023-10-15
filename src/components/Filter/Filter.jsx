@@ -1,15 +1,20 @@
-export const Filter = ({ filter, handleFilterChange, contacts }) => {
+import css from './Filter.module.css';
+
+export const Filter = ({ filter, handleFilterChange }) => {
   return (
-    <>
-      <p>Find contacts by name</p>
-      <input
-        type="text"
-        value={filter}
-        name="filter"
-        onChange={handleFilterChange}
-        placeholder="Contact name"
-        // disabled={!contacts.length > 0}
-      />
-    </>
+    // <>
+      <div className={css.filter}>
+        <p className={css.titleFilter}>Find contacts by name:</p>
+        <input
+          className={css.input}
+          type="text"
+          value={filter}
+          name="filter"
+          onChange={handleFilterChange}
+          placeholder="Contact name"
+          // disabled={!contacts.length > 0}
+        />
+      </div>
+    // </>
   );
 };
