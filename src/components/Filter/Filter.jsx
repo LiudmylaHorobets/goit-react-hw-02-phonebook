@@ -1,4 +1,4 @@
-export const Filter = ({ filter, handleFilterChange }) => {
+export const Filter = ({ filter, handleFilterChange, contacts }) => {
   return (
     <>
       <p>Find contacts by name</p>
@@ -8,6 +8,7 @@ export const Filter = ({ filter, handleFilterChange }) => {
         name="filter"
         onChange={handleFilterChange}
         placeholder="Contact name"
+        // disabled={!contacts.length > 0}
       />
     </>
   );

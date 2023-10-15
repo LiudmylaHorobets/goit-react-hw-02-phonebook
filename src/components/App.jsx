@@ -59,17 +59,22 @@ export class App extends Component {
         <h1 className={css.title}>Phonebook</h1>
         <ContactForm handleAddContact={this.handleAddContact} />
         <h2 className={css.title}>Contacts</h2>
-        <Filter
-          filter={this.filter}
-          handleFilterChange={this.handleFilterChange}
-        />
-        {this.state.contacts.length === 0 ? (
-          <h3>There are no any contacts here</h3>
+        {this.state.contacts.length > 0 ? (
+          <>
+            <Filter
+              filter={this.state.filter}
+              handleFilterChange={this.handleFilterChange}
+              contacts={this.state.contacts}
+            />
+            <ContactsList
+              contacts={this.getContactFromFilter()}
+              handleDelete={this.handleDelete}
+            />
+          </>
         ) : (
-          <ContactsList
-            contacts={this.getContactFromFilter()}
-            handleDelete={this.handleDelete}
-          />
+          <h3 className={css.titleNotification}>
+            There are no any contacts here
+          </h3>
         )}
       </div>
     );
