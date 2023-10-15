@@ -3,5 +3,14 @@
   margin-right: 10px;
 }
 .contactsList {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
+}
+.buttonDelete {
+  border: none;
+  background-color: pink;
+  cursor: pointer;
+}
+.buttonDelete:hover,
+.buttonDelete:focus {
+  background-color: plum;
 }
